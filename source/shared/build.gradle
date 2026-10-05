@@ -1,0 +1,29 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android' version '2.0.21'
+}
+android {
+    namespace = 'com.shilapi.xcertplay.shared'
+    compileSdk = 36
+
+    defaultConfig {
+        minSdk = 28
+        targetSdk = 34
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+dependencies {
+    implementation libs.androidx.app
+    implementation libs.bouncycastle
+    implementation libs.jmdns
+    testImplementation libs.junit
+    testImplementation 'org.robolectric:robolectric:4.17'
+}
